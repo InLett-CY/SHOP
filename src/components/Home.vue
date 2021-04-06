@@ -20,6 +20,7 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           :unique-opened="true"
+          router :default-active="activePath"
         >
           <!-- 一级菜单 -->
           <el-submenu
@@ -34,9 +35,10 @@
             </template>
             <!-- 二级菜单 -->
             <el-menu-item
-              :index="subItem.id + ''"
+              :index="subItem.path + ''"
               v-for="subItem in item.children"
               :key="subItem.id"
+              @click="navState('/'+subItem.path)"
             >
               <template>
                 <i class="el-icon-menu"></i>
@@ -48,6 +50,7 @@
       </el-aside>
       <!-- 主体 -->
       <el-main>
+        <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -66,10 +69,13 @@ export default {
         145: "iconfont icon-trendchart-Fill",
       },
       isCollapse: false,
+      // 该属性用来记录当前活动连接地址
+      activePath:''
     };
   },
   created() {
     this.getMeuList();
+    this.activePath=window.sessionStorage.getItem("activePath");
   },
   methods: {
     loginout() {
@@ -85,6 +91,12 @@ export default {
     },
     toggleCollapse(){
         this.isCollapse=!this.isCollapse;
+    },
+    navState(path){
+      console.log(path);
+      window.sessionStorage.setItem("activePath",path);
+      this.activePath=path;
+      console.log(this.activePath);
     }
   },
 };
