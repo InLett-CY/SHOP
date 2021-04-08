@@ -4,7 +4,7 @@ import { Form, FormItem, Input, Button, Message,Switch,Tooltip,MessageBox } from
 import { Container, Header, Aside, Main, Menu, MenuItem, Submenu } from 'element-ui'
 import { Breadcrumb, BreadcrumbItem } from 'element-ui';
 import { Card, Row, Col } from 'element-ui';
-import { Table,TableColumn,Pagination,Dialog } from 'element-ui';
+import { Table,TableColumn,Pagination,Dialog,Tag,Tree,Select,Option } from 'element-ui';
 
 Vue.prototype.$message = Message;
 Vue.prototype.$messageBox = MessageBox;
@@ -33,3 +33,7 @@ Vue.use(Table);
 Vue.use(TableColumn);
 Vue.use(Pagination);
 Vue.use(Dialog);
+Vue.use(Tag);
+Vue.use(Tree);
+Vue.use(Select);
+Vue.use(Option);
