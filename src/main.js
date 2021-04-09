@@ -5,7 +5,10 @@ import router from './router'
 import './plugins/element.js'
 import '../src/assets/global.css'
 import axios from 'axios'
-import '../src/fonts/iconfont.css'
+import '../src/fonts/iconfont.css';
+import TreeTable from "vue-table-with-tree-grid";
+
+Vue.component("tree-table", TreeTable);
 
 Vue.config.productionTip = false
 

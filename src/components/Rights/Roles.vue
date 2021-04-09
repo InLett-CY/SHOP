@@ -2,6 +2,7 @@
   <div>
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/welcome' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item>权限管理</el-breadcrumb-item>
       <el-breadcrumb-item>角色列表</el-breadcrumb-item>
     </el-breadcrumb>
     <el-card>
@@ -307,7 +308,7 @@ export default {
       }
       const { data: res } = await this.$http.delete(`roles/${id}`);
       if (res.meta.status != 200) {
-        return this.$$message.error("删除角色失败！");
+        return this.$message.error("删除角色失败！");
       }
       this.$message.success("已删除角色！");
       this.getRoleList();

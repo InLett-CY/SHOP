@@ -3,7 +3,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import { Form, FormItem, Input, Button, Message,Switch,Tooltip,MessageBox } from 'element-ui'
 import { Container, Header, Aside, Main, Menu, MenuItem, Submenu } from 'element-ui'
 import { Breadcrumb, BreadcrumbItem } from 'element-ui';
-import { Card, Row, Col } from 'element-ui';
+import { Card, Row, Col,Cascader } from 'element-ui';
 import { Table,TableColumn,Pagination,Dialog,Tag,Tree,Select,Option } from 'element-ui';
 
 Vue.prototype.$message = Message;
@@ -37,3 +37,4 @@ Vue.use(Tag);
 Vue.use(Tree);
 Vue.use(Select);
 Vue.use(Option);
+Vue.use(Cascader);
